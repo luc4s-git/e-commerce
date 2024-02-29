@@ -29,7 +29,9 @@ export default function Error() {
   console.log(error);
   return (
     <main className="grid min-h-[100vh] place-items-center">
-      Sorry, there was an error.
+      <h4 className="text-center font-bold text-4xl">
+        Sorry, there was an error...
+      </h4>
     </main>
   );
 }
