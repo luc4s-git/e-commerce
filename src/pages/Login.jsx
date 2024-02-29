@@ -19,7 +19,7 @@ export default function Login() {
           name="password"
           label="Password"
           type="password"
-          defaultValue="123456789"
+          defaultValue="admin"
         />
         <div className="mt-4">
           <SubmitBtn type="submit" text="LOGIN" />
