@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .align-center {
+    @apply m-auto max-w-6xl px-8;
+  }
+}

@@ -1,11 +1,14 @@
 import { Outlet } from 'react-router-dom';
-import { Navbar } from '../components';
+import { Navbar, Header } from '../components';
 
 export default function HomeLayout() {
   return (
     <>
+      <Header />
       <Navbar />
-      <Outlet />
+      <section className="align-center">
+        <Outlet />
+      </section>
     </>
   );
 }
