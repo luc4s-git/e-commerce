@@ -9,7 +9,6 @@ export default function FormInput({ label, name, type, defaultValue }) {
           name={name}
           type={type}
           defaultValue={defaultValue}
-          placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
         />
       </label>
