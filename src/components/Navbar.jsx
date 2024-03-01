@@ -1,8 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { BsSunFill, BsMoonFill, BsCart3 } from 'react-icons/bs';
+import NavLinks from './NavLinks';
 
 export default function Navbar() {
+  const links = [
+    { id: 'XKIkqx2QbcAg3vPRvrvMe', url: '/', text: 'home' },
+    { id: 'MgRj1az7WfBIEdh1DXiR_', url: 'about', text: 'about' },
+    { id: 'vPseL60bl-1nYlYK7CccS', url: 'products', text: 'products' },
+    { id: '8F4O80ap0xhMPPoi1Atlt', url: 'cart', text: 'cart' },
+  ];
+
   return (
     <nav className="bg-base-200">
       <div className="navbar align-center">
@@ -18,18 +26,7 @@ export default function Navbar() {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
             >
-              <li>
-                <NavLink to={'/'}>Home</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/about'}>About</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/products'}>Products</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/cart'}>Cart</NavLink>
-              </li>
+              <NavLinks links={links} />
             </ul>
           </div>
         </div>
