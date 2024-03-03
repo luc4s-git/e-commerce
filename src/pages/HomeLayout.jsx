@@ -6,7 +6,7 @@ export default function HomeLayout() {
     <>
       <Header />
       <Navbar />
-      <section className="align-center">
+      <section className="align-center py-20">
         <Outlet />
       </section>
     </>
