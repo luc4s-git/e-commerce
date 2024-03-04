@@ -11,7 +11,7 @@ export default function ProductsGrid() {
     return (
       <Link
         key={id}
-        to={'#'}
+        to={`/products/${id}`}
         className="card w-full shadow-xl hover:shadow-2xl transition duration-300"
       >
         <figure className="px-4 pt-4">
