@@ -16,7 +16,7 @@ import {
 
 import { ErrorElement } from './components';
 
-import { loader as LandingLoader } from './pages/Landing';
+import { loader as LandingLoader } from './pages/loaders/LandingLoader';
 
 const router = createBrowserRouter([
   {
