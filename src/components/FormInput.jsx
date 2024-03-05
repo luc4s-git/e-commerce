@@ -1,4 +1,4 @@
-export default function FormInput({ label, name, type, defaultValue }) {
+export default function FormInput({ label, name, type, defaultValue, size }) {
   return (
     <div className="form-control">
       <label className="form-control w-full max-w-xs">
@@ -9,7 +9,7 @@ export default function FormInput({ label, name, type, defaultValue }) {
           name={name}
           type={type}
           defaultValue={defaultValue}
-          className="input input-bordered w-full max-w-xs"
+          className={`input input-bordered ${size}`}
         />
       </label>
     </div>
