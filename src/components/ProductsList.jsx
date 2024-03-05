@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 
 export default function ProductsList() {
-  const { products, meta } = useLoaderData();
+  const { products } = useLoaderData();
 
   const productsMapping = products.map((product) => {
     return (
       <Link
         key={product.id}
-        to={'/'}
+        to={`/products/${product.id}`}
         className="p-8 rounded-lg flex flex-col sm:flex-row gap-y-4 flex-wrap bg-base-100 shadow-xl hover:shadow-2xl duration-300 group"
       >
         <img

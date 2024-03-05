@@ -1,9 +1,4 @@
-import {
-  Filters,
-  PaginationContainer,
-  ProductsContainer,
-  ProductsList,
-} from '../components';
+import { Filters, PaginationContainer, ProductsContainer } from '../components';
 
 export default function Products() {
   return (
@@ -11,7 +6,6 @@ export default function Products() {
       <Filters />
       <ProductsContainer />
       <PaginationContainer />
-      <ProductsList />
     </>
   );
 }
