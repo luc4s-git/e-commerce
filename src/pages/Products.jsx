@@ -1,3 +1,17 @@
+import {
+  Filters,
+  PaginationContainer,
+  ProductsContainer,
+  ProductsList,
+} from '../components';
+
 export default function Products() {
-  return <div>Products</div>;
+  return (
+    <>
+      <Filters />
+      <ProductsContainer />
+      <PaginationContainer />
+      <ProductsList />
+    </>
+  );
 }
