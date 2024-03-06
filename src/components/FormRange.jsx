@@ -16,6 +16,8 @@ export default function FormRange({ label, name, size }) {
       </label>
       <input
         className={`range range-primary ${size}`}
+        name={name}
+        id={name}
         type="range"
         min={0}
         max={100000}
