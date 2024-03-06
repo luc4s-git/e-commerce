@@ -6,4 +6,7 @@
   .align-center {
     @apply m-auto max-w-6xl px-8;
   }
+  .loading-center {
+    @apply h-[calc(100vh-(4rem+2rem))] sm:h-[calc(100vh-(4rem+2.25rem))] md:h-[calc(100vh-(4.25rem+2.25rem))];
+  }
 }

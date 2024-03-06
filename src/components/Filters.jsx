@@ -41,12 +41,15 @@ export default function Filters() {
       {/* RANGE */}
       <FormRange label="select price" name="price" size="range-sm" />
       {/* CHECKBOX INPUT */}
-      <FormCheckbox name="shipping" label="free shipping" size='checkbox-sm' />
+      <FormCheckbox name="shipping" label="free shipping" size="checkbox-sm" />
       {/* BUTTONS */}
-      <button type="submit" className="btn btn-primary btn-sm ">
+      <button type="submit" className="btn btn-primary btn-sm uppercase">
         search
       </button>
-      <Link to="/products" className="btn btn-accent btn-sm">
+      <Link
+        to="/products"
+        className="btn btn-accent btn-sm uppercase text-secondary-content"
+      >
         reset
       </Link>
     </Form>
