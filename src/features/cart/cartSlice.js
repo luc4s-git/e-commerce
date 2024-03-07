@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { formatPrice } from '../../utils';
 
 const initialState = {
   cartItems: [],
@@ -11,9 +10,13 @@ const initialState = {
   orderTotal: 0,
 };
 
+const getCartFromLocalStorage = () => {
+  return JSON.parse(localStorage.getItem('cart')) || initialState;
+};
+
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: initialState,
+  initialState: getCartFromLocalStorage(),
   reducers: {
     addItem: (state, action) => {
       const product = action.payload;
@@ -30,11 +33,12 @@ const cartSlice = createSlice({
       state.cartTotal += product.price * product.amount;
       state.tax = 0.1 * state.cartTotal;
       state.orderTotal = state.cartTotal + state.shipping + state.tax;
-      console.log(formatPrice(state.orderTotal));
+      localStorage.setItem('cart', JSON.stringify(state));
+      toast.success('Item added to cart');
     },
-    removeItem: (state, action) => {},
-    editItem: (state, action) => {},
-    clearCart: (state) => {},
+    removeItem: () => {},
+    editItem: () => {},
+    clearCart: () => {},
   },
 });
 
