@@ -4,11 +4,17 @@ import { FaBarsStaggered } from 'react-icons/fa6';
 import { BsSunFill, BsMoonFill, BsCart3 } from 'react-icons/bs';
 import NavLinks from './NavLinks';
 
+import { useSelector } from 'react-redux';
+
 const getThemeFromLocal = () => {
   return localStorage.getItem('theme') || 'winter';
 };
 
 export default function Navbar() {
+  const { numItemsInCart } = useSelector((state) => {
+    return state.cart;
+  });
+
   const [theme, setTheme] = useState(getThemeFromLocal());
 
   const handleTheme = () => {
@@ -94,7 +100,7 @@ export default function Navbar() {
             <div className="indicator">
               <BsCart3 className="text-2xl" />
               <span className="badge badge-sm badge-primary indicator-item">
-                0
+                {numItemsInCart}
               </span>
             </div>
           </NavLink>

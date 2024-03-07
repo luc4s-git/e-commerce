@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import { formatPrice } from '../utils';
 import { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
+import { addItem } from '../features/cart/cartSlice';
+
 export default function SingleProduct() {
+  const dispatch = useDispatch();
+
   const response = useLoaderData();
   const { data } = response;
   const { image, title, company, price, description, colors } =
@@ -11,6 +16,17 @@ export default function SingleProduct() {
 
   const [productColor, setProductColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
+
+  const cartProduct = {
+    cartID: data.data.id + productColor,
+    productId: data.data.id,
+    image,
+    title,
+    price,
+    amount,
+    productColor,
+    company,
+  };
 
   const handleAmount = (e) => {
     setAmount(Number(e.target.value));
@@ -21,7 +37,7 @@ export default function SingleProduct() {
   };
 
   const handleButton = () => {
-    console.log({ amount, productColor });
+    dispatch(addItem(cartProduct));
   };
 
   return (
