@@ -48,7 +48,7 @@ export default function SingleProduct() {
             <Link to={'/'}>Home</Link>
           </li>
           <li>
-            <Link>Products</Link>
+            <Link to={'/products'}>Products</Link>
           </li>
         </ul>
       </div>

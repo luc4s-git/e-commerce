@@ -45,8 +45,15 @@ const cartSlice = createSlice({
       cartSlice.caseReducers.calculateTotals(state);
       toast.error('Item removed from cart.');
     },
-    editItem: () => {},
-    clearCart: (state) => {
+    editItem: (state, action) => {
+      console.log(action.payload);
+      // const { cartID, amount } = action.payload;
+      // console.log(cartID, amount);
+      // const product = state.cartItems.find((i) => i.cartID === cartID);
+      // console.log(JSON.stringify(product));
+      // state.numItemsInCart = product.amount;
+    },
+    clearCart: () => {
       localStorage.setItem('cart', JSON.stringify(initialState));
       return initialState;
     },
