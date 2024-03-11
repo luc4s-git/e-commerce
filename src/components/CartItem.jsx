@@ -13,9 +13,10 @@ export default function CartItem({
 }) {
   const dispatch = useDispatch();
 
-  const handleAmount = () => {
-    dispatch(editItem(cartID));
+  const handleAmount = (e) => {
+    dispatch(editItem({ cartID, amount: parseInt(e.target.value) }));
   };
+
   const handleRemove = () => {
     dispatch(removeItem(cartID));
   };
@@ -51,7 +52,7 @@ export default function CartItem({
             id="amount"
             className="mt-2 select select-base select-bordered select-xs"
             value={amount}
-            onChange={handleAmount}
+            onChange={(e) => handleAmount(e)}
           >
             {generateAmountOptions(amount + 5)}
           </select>
