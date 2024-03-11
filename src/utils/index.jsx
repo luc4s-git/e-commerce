@@ -12,3 +12,19 @@ export const formatPrice = (price) => {
 
   return dollarsAmount;
 };
+
+export function generateAmountOptions(amount) {
+  const arrForMap = [];
+
+  for (let x = 1; x <= amount; x++) {
+    arrForMap.push(x);
+  }
+
+  return arrForMap.map((item, index) => {
+    return (
+      <option key={index} value={item}>
+        {item}
+      </option>
+    );
+  });
+}
