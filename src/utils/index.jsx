@@ -5,9 +5,9 @@ export const instance = axios.create({
 });
 
 export const formatPrice = (price) => {
-  const dollarsAmount = new Intl.NumberFormat('en-US', {
+  const dollarsAmount = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'BRL',
   }).format((price / 100).toFixed(2));
 
   return dollarsAmount;

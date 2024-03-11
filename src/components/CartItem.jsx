@@ -42,7 +42,7 @@ export default function CartItem({
           ></span>
         </p>
       </div>
-      <div className="sm:ml-12 flex flex-col items-center">
+      <div className="sm:ml-12 sm:flex sm:flex-col sm:items-center">
         <div className="form-control max-w-xs">
           <label htmlFor="amount" className="label p-0">
             <span className="label-text">Amount</span>
@@ -64,7 +64,11 @@ export default function CartItem({
           remove
         </button>
       </div>
-      <p className="font-medium sm:ml-auto">{formatPrice(price)}</p>
+      {
+        <p className="font-medium sm:ml-auto">
+          {formatPrice(price)} x {amount}
+        </p>
+      }
     </article>
   );
 }

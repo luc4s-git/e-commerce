@@ -19,18 +19,18 @@ const cartSlice = createSlice({
   initialState: getCartFromLocalStorage(),
   reducers: {
     addItem: (state, action) => {
-      const product = action.payload;
-
-      const item = state.cartItems.find((i) => i.cartID === product.cartID);
+      const item = state.cartItems.find(
+        (i) => i.cartID === action.payload.cartID
+      );
 
       if (item) {
-        item.amount += product.amount;
+        item.amount += action.payload.amount;
       } else {
-        state.cartItems.push(product);
+        state.cartItems.push(action.payload);
       }
 
-      state.numItemsInCart += product.amount;
-      state.cartTotal += product.price * product.amount;
+      state.numItemsInCart += action.payload.amount;
+      state.cartTotal += action.payload.price * action.payload.amount;
       cartSlice.caseReducers.calculateTotals(state);
       toast.success('Item added to cart');
     },
