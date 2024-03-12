@@ -7,11 +7,27 @@ export default function Register() {
       <Form
         method="POST"
         className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4"
+        action="/register"
       >
         <h4 className="text-center text-3xl font-bold capitalize">register</h4>
-        <FormInput label="username" name="username" type="text" />
-        <FormInput label="email" name="email" type="email" />
-        <FormInput label="password" name="password" type="password" />
+        <FormInput
+          label="username"
+          name="username"
+          type="text"
+          defaultValue={'test11'}
+        />
+        <FormInput
+          label="email"
+          name="email"
+          type="email"
+          defaultValue={'test11@email.com'}
+        />
+        <FormInput
+          label="password"
+          name="password"
+          type="password"
+          defaultValue={'secret'}
+        />
         <div className="mt-4">
           <SubmitBtn text="REGISTER" />
         </div>
@@ -22,7 +38,7 @@ export default function Register() {
             className="link link-hover link-primary capitalize"
           >
             login
-          </Link>{' '}
+          </Link>
         </p>
       </Form>
     </section>
