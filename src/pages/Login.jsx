@@ -1,22 +1,13 @@
 import { FormInput, SubmitBtn } from '../components';
 import { Form, Link } from 'react-router-dom';
 
-import { loginUser } from '../features/user/userSlice';
-import { useDispatch } from 'react-redux';
-
 export default function Login() {
-  const dispatch = useDispatch();
-
-  const handleLogin = (e) => {
-    dispatch(loginUser(e));
-  };
-
   return (
     <section className="h-screen grid place-items-center">
       <Form
-        onSubmit={(e) => handleLogin(e)}
         className="card w-96 p-8 bg-base-100 flex flex-col gap-y-4"
         method="post"
+        action="/login"
       >
         <h4 className="text-center text-3xl font-bold">Login</h4>
         <FormInput

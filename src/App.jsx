@@ -19,7 +19,11 @@ import { ErrorElement } from './components';
 import { loader as LandingLoader } from './pages/loaders/LandingLoader';
 import { loader as SingleProductLoader } from './pages/loaders/SingleProductLoader';
 import { loader as ProductsLoader } from './pages/loaders/ProductsLoader';
+
 import { action as RegisterAction } from './pages/actions/RegisterAction';
+import { action as LoginAction } from './pages/actions/LoginAction';
+
+import { store } from './store';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +57,7 @@ const router = createBrowserRouter([
     path: '/login',
     element: <Login />,
     errorElement: <Error />,
+    action: LoginAction(store),
   },
   {
     path: '/register',

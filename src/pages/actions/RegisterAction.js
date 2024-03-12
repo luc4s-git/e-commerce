@@ -5,7 +5,6 @@ import { redirect } from 'react-router-dom';
 const url = '/auth/local/register';
 
 export const action = async ({ request }) => {
-  console.log(request);
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 

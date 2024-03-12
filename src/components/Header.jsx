@@ -20,10 +20,10 @@ export default function Header() {
   return (
     <header className="w-screen bg-neutral py-2 text-neutral-content">
       <div className="align-center flex justify-center sm:justify-end">
-        <div className="flex gap-x-2 sm:gap-x-6 justify-center items-center">
+        <div className="flex gap-x-2 sm:gap-x-8 justify-center items-center">
           {user ? (
             <>
-              <p className="text-xs sm:text-sm">Hello, {user.userName}</p>
+              <p className="text-xs sm:text-sm">Hello, {user.username}</p>
               <button className="btn btn-xs uppercase" onClick={handleLogout}>
                 logout
               </button>

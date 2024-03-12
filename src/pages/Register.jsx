@@ -14,13 +14,13 @@ export default function Register() {
           label="username"
           name="username"
           type="text"
-          defaultValue={'test11'}
+          defaultValue={'test320'}
         />
         <FormInput
           label="email"
           name="email"
           type="email"
-          defaultValue={'test11@email.com'}
+          defaultValue={'test320@email.com'}
         />
         <FormInput
           label="password"

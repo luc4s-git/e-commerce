@@ -12,8 +12,13 @@ const getThemeFromLocal = () => {
   return theme;
 };
 
+const getUsernameFromLocal = () => {
+  const user = JSON.parse(localStorage.getItem('user')) || null;
+  return user;
+};
+
 const initialState = {
-  user: { userName: 'coding addict' },
+  user: getUsernameFromLocal(),
   theme: getThemeFromLocal(),
 };
 
@@ -22,7 +27,9 @@ const userReducer = createSlice({
   initialState: initialState,
   reducers: {
     loginUser: (state, action) => {
-      console.log({ from: 'login', state, payload: action.payload });
+      state.user = action.payload.user;
+      console.log(state.user);
+      localStorage.setItem('user', JSON.stringify(state.user));
     },
     logoutUser: (state) => {
       state.user = null;
