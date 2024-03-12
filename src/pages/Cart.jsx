@@ -3,7 +3,8 @@ import { SectionTitle, CartItemsList, CartTotals } from '../components';
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
-  const user = null;
+  const user = useSelector((state) => state.user.user);
+
   const { numItemsInCart } = useSelector((state) => state.cart);
 
   if (numItemsInCart === 0) {

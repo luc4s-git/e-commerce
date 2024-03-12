@@ -8,7 +8,6 @@ const themes = {
 
 const getThemeFromLocal = () => {
   const theme = localStorage.getItem('theme') || themes.lofi;
-  console.log(theme);
   document.documentElement.setAttribute('data-theme', theme);
   return theme;
 };
@@ -26,7 +25,9 @@ const userReducer = createSlice({
       console.log({ from: 'login', state, payload: action.payload });
     },
     logoutUser: (state) => {
-      console.log({ from: 'logout', state });
+      state.user = null;
+      localStorage.removeItem('user');
+      toast.success('Logged out successfully');
     },
     toggleTheme: (state) => {
       const { black, lofi } = themes;
