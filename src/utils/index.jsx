@@ -13,6 +13,19 @@ export const formatPrice = (price) => {
   return dollarsAmount;
 };
 
+export const formatDate = (date) => {
+  const newDate = new Date(date);
+  const formattedDate = new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  }).format(newDate);
+
+  return formattedDate;
+};
+
 export function generateAmountOptions(amount) {
   const arrForMap = [];
 
