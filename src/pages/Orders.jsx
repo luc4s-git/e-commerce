@@ -1,5 +1,9 @@
 import { useLoaderData } from 'react-router-dom';
-import { SectionTitle, OrdersList, PaginationContainer } from '../components';
+import {
+  SectionTitle,
+  OrdersList,
+  ComplexPaginationContainer,
+} from '../components';
 
 export default function Orders() {
   const { orders, meta } = useLoaderData();
@@ -12,7 +16,7 @@ export default function Orders() {
     <>
       <SectionTitle title="your orders" />
       <OrdersList orders={orders} />
-      <PaginationContainer />
+      <ComplexPaginationContainer />
     </>
   );
 }

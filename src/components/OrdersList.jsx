@@ -9,8 +9,6 @@ export default function OrdersList() {
 
   const tableHeadings = ['name', 'address', 'products', 'cost', 'date'];
 
-  // console.log({ orders, meta });
-
   return (
     <div className="mt-8">
       <h4 className="mb-4 capitalize">total orders: {meta.pagination.total}</h4>
@@ -33,14 +31,15 @@ export default function OrdersList() {
             </tr>
           </thead>
           <tbody>
-            {orders.map((item, index) => {
+            {orders.map((item) => {
+              const id = item.id;
               const { name, address, numItemsInCart, orderTotal, createdAt } =
                 item.attributes;
 
-              const date = dayjs(createdAt).format('hh:mm a - MMM D[th], YYYY');
+              const date = dayjs(createdAt).format('hh:mm a - MMM Do, YYYY');
 
               return (
-                <tr key={index}>
+                <tr key={id}>
                   <td>{name}</td>
                   <td>{address}</td>
                   <td>{numItemsInCart}</td>

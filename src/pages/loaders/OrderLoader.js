@@ -25,7 +25,6 @@ export const loader =
           Authorization: `Bearer ${user.token}`,
         },
       });
-      console.log(response);
 
       return { orders: response.data.data, meta: response.data.meta };
     } catch (error) {

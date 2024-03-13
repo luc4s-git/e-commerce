@@ -34,6 +34,7 @@ export default function PaginationContainer() {
         >
           prev
         </button>
+
         {pages.map((item, index) => {
           return (
             <button
@@ -49,6 +50,7 @@ export default function PaginationContainer() {
             </button>
           );
         })}
+
         <button
           onClick={() => {
             let nextPage = page + 1;
