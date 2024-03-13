@@ -1,6 +1,6 @@
 import { formatDate } from '../utils';
 
-export default function OrderColumn({ item }) {
+export default function OrderList({ item }) {
   const { name, address, numItemsInCart, orderTotal, publishedAt } =
     item.attributes;
 
