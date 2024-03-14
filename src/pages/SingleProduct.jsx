@@ -12,6 +12,7 @@ export default function SingleProduct() {
   const dispatch = useDispatch();
 
   const response = useLoaderData();
+
   const { data } = response;
   const { image, title, company, price, description, colors } =
     data.data.attributes;
