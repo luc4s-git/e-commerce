@@ -4,8 +4,23 @@ import { redirect } from 'react-router-dom';
 
 const url = '/orders';
 
+const orderQuery = (params, user) => {
+  const { page } = params;
+
+  return {
+    queryKey: ['orders', user.username, page ? parseInt(page) : 1],
+    queryFn: () =>
+      instance.get(url, {
+        params,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }),
+  };
+};
+
 export const loader =
-  (store) =>
+  (store, queryClient) =>
   async ({ request }) => {
     const user = store.getState().user.user;
 
@@ -19,13 +34,9 @@ export const loader =
     ]);
 
     try {
-      const response = await instance.get(url, {
-        params,
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
-
+      const response = await queryClient.ensureQueryData(
+        orderQuery(params, user)
+      );
       return { orders: response.data.data, meta: response.data.meta };
     } catch (error) {
       console.log(error);
@@ -36,7 +47,7 @@ export const loader =
 
       toast.error(errorMassage);
 
-      if (error.response.status === 401 || error.response.status === 403)
+      if (error?.response?.status === 401 || error?.response?.status === 403)
         return redirect('/login');
 
       return null;
