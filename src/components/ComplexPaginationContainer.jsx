@@ -5,8 +5,9 @@ export default function ComplexPaginationContainer() {
   const { page, pageCount } = meta.pagination;
 
   const { search, pathname } = useLocation();
-
   const navigate = useNavigate();
+
+  if (pageCount === 1) return;
 
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);
