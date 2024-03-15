@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { clearCart } from '../../features/cart/cartSlice';
 
 export const action =
-  (store) =>
+  (store, queryClient) =>
   async ({ request }) => {
     const data = Object.fromEntries(await request.formData());
 
@@ -31,6 +31,8 @@ export const action =
           },
         }
       );
+
+      queryClient.removeQueries(['orders']);
 
       store.dispatch(clearCart());
       toast.success('Order placed successfully.');

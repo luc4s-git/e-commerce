@@ -10,24 +10,9 @@ export default function Register() {
         action="/register"
       >
         <h4 className="text-center text-3xl font-bold capitalize">register</h4>
-        <FormInput
-          label="username"
-          name="username"
-          type="text"
-          defaultValue={'test320'}
-        />
-        <FormInput
-          label="email"
-          name="email"
-          type="email"
-          defaultValue={'test320@email.com'}
-        />
-        <FormInput
-          label="password"
-          name="password"
-          type="password"
-          defaultValue={'secret'}
-        />
+        <FormInput label="username" name="username" type="text" />
+        <FormInput label="email" name="email" type="email" />
+        <FormInput label="password" name="password" type="password" />
         <div className="mt-4">
           <SubmitBtn text="REGISTER" />
         </div>
